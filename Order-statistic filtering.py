@@ -14,6 +14,7 @@ def imstack(img, s1, s2):
             xstack = np.append(xshift,xstack, axis=-1)
     return xstack
 
+
 def imshift(x, k, l):
     h,w = x.shape
     xshifted = np.zeros((h,w))

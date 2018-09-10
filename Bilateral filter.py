@@ -23,18 +23,15 @@ def test_imbilateral():
     H = 1
     s1 = s2 = 10
     img = imread('castle.png')
-
     plt.subplot(1, 3, 1)
     plt.title("original")
     plt.axis('off')
     plt.imshow(img, cmap=plt.get_cmap('gray'))
-
     img_noise = GaussianNoise(img, 0, 10)
     plt.subplot(1, 3, 2)
     plt.title("noise")
     plt.axis('off')
     plt.imshow(img_noise, cmap=plt.get_cmap('gray'))
-
     t0 = time.time()
     img1 = imbilateral(img_noise, s1, s2, sigma, H)
     print("time cost:",time.time()-t0)
